@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
+    // Login page
+    Route::get('login', ['as' => 'page_login', 'uses' => 'AuthController@login']);
+    // Login action
+    Route::post('login', ['as' => 'action_login', 'uses' => 'AuthController@loginHandle']);
+});
