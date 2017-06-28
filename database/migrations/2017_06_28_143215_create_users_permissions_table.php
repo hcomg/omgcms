@@ -14,7 +14,7 @@ class CreateUsersPermissionsTable extends Migration
     public function up()
     {
         Schema::create('users_permissions', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned()->index();
+            $table->integer('user_id')->unsigned()->primary();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('permission_id')->unsigned()->index();
             $table->foreign('permission_id')->references('id')->on('permissions')->onDelete('cascade');

@@ -14,7 +14,7 @@ class CreateTeamsPermissionsTable extends Migration
     public function up()
     {
         Schema::create('teams_permissions', function (Blueprint $table) {
-            $table->integer('team_id')->unsigned()->index();
+            $table->integer('team_id')->unsigned()->primary();
             $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
             $table->integer('permission_id')->unsigned()->index();
             $table->foreign('permission_id')->references('id')->on('permissions')->onDelete('cascade');
