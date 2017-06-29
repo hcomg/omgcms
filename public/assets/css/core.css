@@ -15925,7 +15925,7 @@ h3.form-title {
 }
 
 #navbar-icons > li.dropdown > .dropdown-toggle:last-child {
-    padding-right: 0
+    /*padding-right: 0*/
 }
 
 #navbar-icons > li.dropdown > .dropdown-toggle > i {
@@ -15991,7 +15991,6 @@ h3.form-title {
 #navbar-icons > li.dropdown-extended .dropdown-menu > li.external > a {
     display: inline-block;
     padding: 0;
-    background: 0 0;
     clear: inherit;
     font-size: 13px;
     position: absolute;
