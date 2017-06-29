@@ -41,4 +41,11 @@ class AuthController extends Controller
             }
         }
     }
+
+    // Logout action
+    public function doLogout() {
+        \Auth::logout();
+        \Session::flush();
+        return redirect()->route('admin.page_login');
+    }
 }
