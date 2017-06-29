@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2b275e76eca4606c818f7080a9d5e6c",
+    "content-hash": "c263fd8441fc223ef98b1b3487219f47",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2287,6 +2287,50 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "yaap/theme",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yaapis/Theme.git",
+                "reference": "22fe369044ab2cdfc7da3042130b8087fd0a5f1e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yaapis/Theme/zipball/22fe369044ab2cdfc7da3042130b8087fd0a5f1e",
+                "reference": "22fe369044ab2cdfc7da3042130b8087fd0a5f1e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "laravel/framework": "5.4.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "YAAP\\Theme": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Biluk Andrey",
+                    "email": "yaapis@gmail.com"
+                }
+            ],
+            "description": "Theme support for Laravel 4/5 with assets, theme extends etc.",
+            "keywords": [
+                "asset",
+                "laravel",
+                "layout",
+                "theme"
+            ],
+            "time": "2017-02-15T16:27:24+00:00"
         }
     ],
     "packages-dev": [
