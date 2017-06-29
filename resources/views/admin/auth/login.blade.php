@@ -45,14 +45,16 @@
   <h3 class="form-title font-green">Login to system</h3>
   <div class="content-wrapper">
     <form method="POST" action="{{ url('admin/login') }}" class="login-form">
-      <div class="alert alert-danger display-hide">
+      @if($errors->any())
+      <div class="alert alert-danger">
         <button class="close" data-close="alert"></button>
-        <span></span>
+        <span>{{$errors->first()}}</span>
       </div>
+      @endif
       <div class="form-group">
         <label class="control-label">Email</label>
         <input class="form-control form-control-solid placeholder-no-fix" placeholder="Email"
-               name="email" type="email" />
+               name="email" type="email" value="{{ old('email') }}" />
       </div>
 
       <div class="form-group">
@@ -74,6 +76,7 @@
       </div>
 
       <div class="form-group form-actions">
+        {{ csrf_field() }}
         <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in"></i> Sign in</button>
       </div>
 
