@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-    Theme::init('freelancer');
+    $currentTheme = \App\Models\Setting::where('setting_key', 'web_theme')->first();
+    if ($currentTheme && strlen($currentTheme->setting_value)) {
+        Theme::init($currentTheme->setting_value);
+    } else {
+        Theme::init('creative');
+    }
     return View::make('welcome');
 });
 
