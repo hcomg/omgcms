@@ -10891,16 +10891,16 @@ h3.form-title {
 }
 
 .login .content .form-control::-moz-placeholder {
-    color: #8290a3;
+    color: #b2c5df;
     opacity: 1
 }
 
 .login .content .form-control:-ms-input-placeholder {
-    color: #8290a3
+    color: #b2c5df
 }
 
 .login .content .form-control::-webkit-input-placeholder {
-    color: #8290a3
+    color: #b2c5df
 }
 
 .login .content select.form-control {
