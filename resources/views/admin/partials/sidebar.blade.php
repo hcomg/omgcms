@@ -9,7 +9,7 @@
              class="img-circle">
         <div class="user-info">
           {{ (Auth::user()->display_name) ? Auth::user()->display_name : Auth::user()->name }}
-          <span>{{ request()->ip() }}</span>
+          <span>{{ time_elapsed_string(Auth::user()->last_login) }}</span>
         </div>
       </a>
 
