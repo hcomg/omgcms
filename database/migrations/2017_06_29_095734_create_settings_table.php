@@ -22,7 +22,7 @@ class CreateSettingsTable extends Migration
             $table->enum('setting_type', [
                 'button', 'checkbox', 'color', 'date', 'datetime-local', 'email', 'file', 'hidden',
                 'image', 'month', 'number', 'password', 'radio', 'range', 'reset', 'search',
-                'submit', 'tel', 'text', 'time', 'url', 'week'
+                'select', 'submit', 'tel', 'text', 'textarea', 'time', 'url', 'week'
             ]);
             $table->text('setting_options')->nullable();
             $table->smallInteger('sort_order')->unsigned()->index();
