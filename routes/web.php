@@ -36,5 +36,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], fu
         Route::post('logout', ['as' => 'page_logout', 'uses' => 'AuthController@doLogout']);
         // Overview index page
         Route::get('overview', ['as' => 'page_overview', 'uses' => 'OverviewController@index']);
+        // Settings page
+        Route::get('settings', ['as' => 'page_settings', 'uses' => 'SettingController@index']);
+        // Save settings
+        Route::post('settings', ['as' => 'action_settings_save', 'uses' => 'SettingController@save']);
     });
 });
