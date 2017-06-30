@@ -17,21 +17,11 @@ class AuthenticateWithPermission
      */
     public function handle($request, Closure $next)
     {
-        // Find api_token from request
-        $api_token = [];
-        if ($token = $request->get('api_token')) {
-            if (!in_array($token, $api_token)) {
-                $api_token[] = $token;
-            }
+        if (\Auth::user()) {
+            $user = \Auth::user();
+        } else {
+            $user = User::whereIn('api_token', get_api_token_from_request($request))->first();
         }
-        if ($token = $request->header('Authorization')) {
-            $token = str_replace('Bearer ', '', $token);
-            if (!in_array($token, $api_token)) {
-                $api_token[] = $token;
-            }
-        }
-        // Find user with api_token
-        $user = User::whereIn('api_token', $api_token)->first();
 
         // Check user permissions
         if ($user && $user->permissions->count()) {

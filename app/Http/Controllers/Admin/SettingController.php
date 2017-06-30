@@ -12,7 +12,9 @@ class SettingController extends Controller
 {
     // Settings page
     public function index() {
-        $settingGroups = SettingGroup::with(['settings'])->get();
+        $settingGroups = SettingGroup::select(['id', 'name'])
+            ->with(['settings'])
+            ->get();
         return view('admin.settings.index', [
             'settingGroups' => $settingGroups
         ]);

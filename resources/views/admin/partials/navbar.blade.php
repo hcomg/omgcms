@@ -27,7 +27,7 @@
     </li>
 
     <li class="dropdown">
-      <a class="dropdown-toggle dropdown-header-name" href="{{ url('admin/config') }}">
+      <a class="dropdown-toggle dropdown-header-name" href="{{ url('admin/settings') }}">
         <i class="fa fa-cogs"></i>
       </a>
     </li>
@@ -57,6 +57,31 @@
               </a>
             </li>
           </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li class="language dropdown">
+      <a href="javascript:;" class="dropdown-toggle dropdown-header-name" data-toggle="dropdown" data-hover="dropdown">
+        @if (App::getLocale() == 'en')
+        <img src="{{ asset('assets/images/flags/us.png') }}" title="English" alt="English">
+        <span class="hidden-xs">English</span>
+        @elseif (App::getLocale() == 'vi')
+          <img src="{{ asset('assets/images/flags/vn.png') }}" title="Tiếng Việt" alt="Tiếng Việt">
+          <span class="hidden-xs">Tiếng Việt</span>
+        @endif
+          <i class="fa fa-angle-down"></i>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-right icons-right">
+        <li class="{{ (App::getLocale() == 'en') ? 'active' : '' }}">
+          <a href="{{ url('locale/set/en') }}">
+            <img src="{{ asset('assets/images/flags/us.png') }}" title="English" alt="English"> <span>English</span>
+          </a>
+        </li>
+        <li class="{{ (App::getLocale() == 'vi') ? 'active' : '' }}">
+          <a href="{{ url('locale/set/vi') }}">
+            <img src="{{ asset('assets/images/flags/vn.png') }}" title="Tiếng Việt" alt="Tiếng Việt"> <span>Tiếng Việt</span>
+          </a>
         </li>
       </ul>
     </li>

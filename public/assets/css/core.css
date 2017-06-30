@@ -499,6 +499,10 @@ blockquote {
     color: #fff
 }
 
+.navbar-inverse .navbar-nav > li > a > span {
+    vertical-align: text-bottom;
+}
+
 .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
     background-color: rgba(0, 0, 0, .03);
     box-shadow: 1px 0 0 rgba(0, 0, 0, .05) inset, -1px 0 0 rgba(0, 0, 0, .05) inset;
