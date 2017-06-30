@@ -22,7 +22,7 @@
 
     <li class="dropdown">
       <a class="dropdown-toggle dropdown-header-name" href="{{ url('/') }}" target="_blank">
-        <i class="fa fa-globe"></i> <span>View website</span>
+        <i class="fa fa-globe"></i> <span>{{ trans('page.partials.navbar.view_website') }}</span>
       </a>
     </li>
 
@@ -39,8 +39,8 @@
       </a>
       <ul class="dropdown-menu">
         <li class="external">
-          <h3>You have <span class="bold">1 New</span> Messages</h3>
-          <a href="javascript:;">View all</a>
+          <h3>{!! trans('page.partials.navbar.have_new_message', ['message_count' => 1]) !!}</h3>
+          <a href="javascript:;">{{ trans('general.view_all') }}</a>
         </li>
         <li>
           <ul class="dropdown-menu-list scroller" style="height: 70px;" data-handle-color="#637283">
@@ -71,10 +71,10 @@
         <i class="fa fa-angle-down"></i>
       </a>
       <ul class="dropdown-menu dropdown-menu-default">
-        <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+        <li><a href="#"><i class="icon-user"></i> {{ trans('general.profile') }}</a></li>
         <li>
           <a href="javascript:;" onclick="return document.getElementById('logoutForm').submit();">
-            <i class="icon-key"></i> Logout
+            <i class="icon-key"></i> {{ trans('general.logout') }}
           </a>
         </li>
       </ul>

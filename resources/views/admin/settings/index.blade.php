@@ -24,7 +24,9 @@
           @foreach($group->settings as $setting)
           <div class="col-md-6">
             <div class="form-group ">
-              <label for="rich_editor" class="control-label">{{ $setting->setting_key }}</label>
+              <label for="rich_editor" class="control-label">
+                {{ trans('page.settings.' . $setting->setting_key) }}
+              </label>
               {!! generate_setting_input_field($setting) !!}
             </div>
             <div class="clearfix"></div>
@@ -36,7 +38,7 @@
         <div class="text-right col-xs-12">
           {{ csrf_field() }}
           <button type="submit" name="submit" value="save" class="btn btn-info">
-            <i class="fa fa-save"></i> Save
+            <i class="fa fa-save"></i> {{ trans('form.save') }}
           </button>
         </div>
         <div class="clearfix"></div>
