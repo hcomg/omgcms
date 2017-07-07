@@ -492,7 +492,7 @@ blockquote {
 }
 
 .navbar-inverse {
-    background-color: #518ca3
+    background-color: #374b5e
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -14921,7 +14921,8 @@ h3.form-title {
 
 .navigation > li.active:focus > a, .navigation > li.active:hover > a, .navigation > li.active > a {
     color: #fff;
-    background-color: #43b1d6
+    background-color: #30434b;
+    border-left: 3px solid #43b1d6;
 }
 
 .navigation > li ul li a, .navigation > li > a {
@@ -14956,6 +14957,26 @@ h3.form-title {
     font-size: 11px;
     list-style: none;
     z-index: 1010
+}
+
+.navigation .navigation-header, .navigation .navigation-header a {
+    color: rgba(255, 255, 255, .8);
+    font-weight: 600;
+}
+
+.navigation .navigation-header {
+    min-height: 30px;
+    padding: 10px 20px;
+    border-bottom: 0;
+    text-transform: uppercase;
+    font-size: 11px;
+    line-height: 1.82;
+}
+
+.navigation .navigation-header>span {
+    display: block;
+    margin-top: 2px;
+    color: rgba(255, 255, 255, .8);
 }
 
 .sidebar-narrow .navigation > li > ul {

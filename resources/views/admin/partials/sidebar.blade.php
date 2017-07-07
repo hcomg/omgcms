@@ -17,10 +17,25 @@
     <!-- /user dropdown -->
     <!-- Main navigation -->
     <ul class="navigation">
-      <li class="nav-item ">
+      <li class="nav-item {{ is_active_menu('admin.page_overview') }}">
         <a href="{{ url('admin/overview') }}" class="nav-link nav-toggle">
           <i class="fa fa-home"></i>
           <span class="title">Overview</span>
+        </a>
+      </li>
+      <li class="navigation-header">
+        <span>{{ trans('general.system_settings') }}</span>
+      </li>
+      <li class="nav-item {{ is_active_menu('admin.page_settings') }}">
+        <a href="{{ url('admin/settings') }}" class="nav-link nav-toggle">
+          <i class="fa fa-cog"></i>
+          <span class="title">Settings</span>
+        </a>
+      </li>
+      <li class="nav-item {{ is_active_menu('admin.page_languages') }}">
+        <a href="{{ url('admin/languages') }}" class="nav-link nav-toggle">
+          <i class="fa fa-language"></i>
+          <span class="title">Languages</span>
         </a>
       </li>
     </ul>
