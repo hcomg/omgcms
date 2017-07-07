@@ -19,3 +19,11 @@ function get_api_token_from_request($request) {
     }
     return $api_token;
 }
+
+/**
+ * @param string $routeName
+ * @return string
+ */
+function is_active_menu($routeName) {
+    return Request::route()->getName() == $routeName ? 'active' : '';
+}
