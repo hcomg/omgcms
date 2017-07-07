@@ -41,6 +41,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereUpdatedAt($value)
  * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Permission[] $permissions
+ * @property string $locale
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereLocale($value)
  */
 class User extends Authenticatable
 {

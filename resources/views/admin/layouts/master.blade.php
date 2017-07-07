@@ -27,7 +27,7 @@
   <!-- Page content -->
   <div class="page-content">
     <ol class="breadcrumb">
-      <li><a href="{{ url('admin') }}">Home</a></li>
+      <li><a href="{{ url('admin') }}">{{ trans('page.home.title') }}</a></li>
       <li class="active">@yield('title')</li>
     </ol>
     <div class="clearfix"></div>

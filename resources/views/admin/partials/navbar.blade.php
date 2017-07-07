@@ -22,12 +22,12 @@
 
     <li class="dropdown">
       <a class="dropdown-toggle dropdown-header-name" href="{{ url('/') }}" target="_blank">
-        <i class="fa fa-globe"></i> <span>View website</span>
+        <i class="fa fa-globe"></i> <span>{{ trans('page.partials.navbar.view_website') }}</span>
       </a>
     </li>
 
     <li class="dropdown">
-      <a class="dropdown-toggle dropdown-header-name" href="{{ url('admin/config') }}">
+      <a class="dropdown-toggle dropdown-header-name" href="{{ url('admin/settings') }}">
         <i class="fa fa-cogs"></i>
       </a>
     </li>
@@ -39,8 +39,8 @@
       </a>
       <ul class="dropdown-menu">
         <li class="external">
-          <h3>You have <span class="bold">1 New</span> Messages</h3>
-          <a href="javascript:;">View all</a>
+          <h3>{!! trans('page.partials.navbar.have_new_message', ['message_count' => 1]) !!}</h3>
+          <a href="javascript:;">{{ trans('general.view_all') }}</a>
         </li>
         <li>
           <ul class="dropdown-menu-list scroller" style="height: 70px;" data-handle-color="#637283">
@@ -61,6 +61,31 @@
       </ul>
     </li>
 
+    <li class="language dropdown">
+      <a href="javascript:;" class="dropdown-toggle dropdown-header-name" data-toggle="dropdown" data-hover="dropdown">
+        @if (App::getLocale() == 'en')
+        <img src="{{ asset('assets/images/flags/us.png') }}" title="English" alt="English">
+        <span class="hidden-xs">English</span>
+        @elseif (App::getLocale() == 'vi')
+          <img src="{{ asset('assets/images/flags/vn.png') }}" title="Tiếng Việt" alt="Tiếng Việt">
+          <span class="hidden-xs">Tiếng Việt</span>
+        @endif
+          <i class="fa fa-angle-down"></i>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-right icons-right">
+        <li class="{{ (App::getLocale() == 'en') ? 'active' : '' }}">
+          <a href="{{ url('locale/set/en') }}">
+            <img src="{{ asset('assets/images/flags/us.png') }}" title="English" alt="English"> <span>English</span>
+          </a>
+        </li>
+        <li class="{{ (App::getLocale() == 'vi') ? 'active' : '' }}">
+          <a href="{{ url('locale/set/vi') }}">
+            <img src="{{ asset('assets/images/flags/vn.png') }}" title="Tiếng Việt" alt="Tiếng Việt"> <span>Tiếng Việt</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
     <li class="dropdown dropdown-user">
       <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
         <img alt="{{ (Auth::user()->display_name) ? Auth::user()->display_name : Auth::user()->name }}"
@@ -71,10 +96,10 @@
         <i class="fa fa-angle-down"></i>
       </a>
       <ul class="dropdown-menu dropdown-menu-default">
-        <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+        <li><a href="#"><i class="icon-user"></i> {{ trans('general.profile') }}</a></li>
         <li>
           <a href="javascript:;" onclick="return document.getElementById('logoutForm').submit();">
-            <i class="icon-key"></i> Logout
+            <i class="icon-key"></i> {{ trans('general.logout') }}
           </a>
         </li>
       </ul>

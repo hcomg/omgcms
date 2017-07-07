@@ -21,6 +21,10 @@ Route::get('/', function () {
     return View::make('welcome');
 });
 
+// Set locale
+Route::get('locale/set/{locale?}', ['as' => 'locale.set_locale', 'uses' => 'LocaleController@setLocale']);
+
+// Admin routes
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
     Route::get('/', function() {
         return redirect(route('admin.page_overview'));

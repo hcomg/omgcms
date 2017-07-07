@@ -34,8 +34,6 @@ class AuthController extends Controller
 
             // Check login info
             if(\Auth::attempt($credentials, $request->has('remember'))) {
-                \Session::remove('remember_token');
-                \Session::push('remember_token', \Auth::user()->remember_token);
                 \Auth::user()->last_login = date('Y-m-d H:i:s');
                 try {
                     \Auth::user()->save();
