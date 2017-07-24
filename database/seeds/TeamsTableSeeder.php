@@ -18,10 +18,13 @@ class TeamsTableSeeder extends Seeder
         ], [
             'name' => 'Team 3'
         ]];
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         try {
+            \App\Models\Team::truncate();
             \App\Models\Team::insert($data);
         } catch (\Illuminate\Database\QueryException $exception) {
-            //
+            Log::error($exception->getMessage());
         }
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

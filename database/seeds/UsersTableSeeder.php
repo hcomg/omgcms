@@ -27,10 +27,13 @@ class UsersTableSeeder extends Seeder
             'api_token' => bcrypt(rand(1,10)),
             'password' => bcrypt('123123')
         ]];
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         try {
+            \App\Models\User::truncate();
             \App\Models\User::insert($data);
         } catch (\Illuminate\Database\QueryException $exception) {
-            //
+            Log::error($exception->getMessage());
         }
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

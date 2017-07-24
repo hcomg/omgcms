@@ -18,10 +18,13 @@ class LanguagesTableSeeder extends Seeder
             'locale' => 'vi',
             'name' => 'Tiếng Việt'
         ]];
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         try {
+            \App\Models\Language::truncate();
             \App\Models\Language::insert($data);
         } catch (\Illuminate\Database\QueryException $exception) {
-            //
+            Log::error($exception->getMessage());
         }
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

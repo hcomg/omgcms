@@ -54,10 +54,13 @@ class SettingsTableSeeder extends Seeder
             'group_id' => 2,
             'sort_order' => 1,
         ]];
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         try {
+            \App\Models\Setting::truncate();
             \App\Models\Setting::insert($data);
         } catch (\Illuminate\Database\QueryException $exception) {
-            Log::debug($exception->getMessage());
+            Log::error($exception->getMessage());
         }
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

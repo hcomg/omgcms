@@ -18,10 +18,13 @@ class SettingGroupsTableSeeder extends Seeder
             'name' => 'Themes',
             'sort_order' => 2
         ]];
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         try {
+            \App\Models\SettingGroup::truncate();
             \App\Models\SettingGroup::insert($data);
         } catch (\Illuminate\Database\QueryException $exception) {
-            //
+            Log::error($exception->getMessage());
         }
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

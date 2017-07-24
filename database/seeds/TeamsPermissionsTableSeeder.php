@@ -15,10 +15,13 @@ class TeamsPermissionsTableSeeder extends Seeder
             'team_id' => 1,
             'permission_id' => 1
         ]];
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         try {
+            DB::table('teams_permissions')->truncate();
             DB::table('teams_permissions')->insert($data);
         } catch (\Illuminate\Database\QueryException $exception) {
-
+            Log::error($exception->getMessage());
         }
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }
